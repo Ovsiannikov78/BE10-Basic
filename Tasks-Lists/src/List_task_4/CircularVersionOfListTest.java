@@ -39,4 +39,19 @@ public class CircularVersionOfListTest {
 
         Assert.assertFalse(akt);
     }
+
+    @Test
+    public void testCircularVersionOfListTest2(){
+        List<String> list1 = new LinkedList<>();
+        Collections.addAll(list1,"dd", "ee", "ff");
+
+        List<String> list2 = new LinkedList<>();
+        Collections.addAll(list2, "ff", "dd", "ee");
+
+        boolean akt = CircularVersionOfList.circularVersionOfList(list1,list2);
+
+        Assert.assertTrue(akt);
+    }
+
+
 }

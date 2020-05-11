@@ -11,12 +11,33 @@ public class CircularVersionOfList {
 
   }
 
-  public static boolean circularVersionOfList(List<String> list1,List<String> list2){
-      if(list1.size() % 2 == 0) {
-          Collections.rotate(list1, 2);
-          return list1.equals(list2);
+  /*public static boolean circularVersionOfList(List<String> list1,List<String> list2){
+      int count = list1.size();
+      if(list1.size() == list2.size()) {
+          while (count != 0) {
+              Collections.rotate(list1, 1);
+              count--;
+              if(list1.equals(list2)) {
+                  return true;
+              }
+          }
       }
       return false;
-  }
+  } */
+    public static boolean circularVersionOfList(List<String> list1,List<String> list2){
+
+        if(list1.size() == list2.size()) {
+            for (int i = list1.size(); i >= 0 ; i--) {
+                Collections.rotate(list1, 1);
+                if(list1.equals(list2)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
+
+
+
 
