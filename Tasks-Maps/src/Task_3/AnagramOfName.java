@@ -1,5 +1,6 @@
 package Task_3;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class AnagramOfName {
@@ -12,22 +13,31 @@ public class AnagramOfName {
          Дан словарь, содержащий анаграммы, например {“anna”, “ivan”, “naan”, “vani”, “piotr”, “nana”, “navi”}.
          Написать функцию, которая по слову из словаря вернет все анаграммы этого слова, которые есть в словаре.
          Например, по слову “ivan” функция вернет {“navi”, “vani”}
-   */
+*/
 
-    public static Set<String> findAnagramsFromName(List<String> anagrams, String name) {
+    public static char[] getSortedCharArrayFromString(String string) {
+        char[] charArr = string.toCharArray();
+        Arrays.sort(charArr);
+        return charArr;
+    }
 
-        Set<String> anagramsFromName = new TreeSet<>();
+
+    public static List<String> getListOfAnagramsByName(List<String> anagrams, String name) {
+        List<String> listOfAnagramsFromName = new ArrayList<>();
         for (String anagram : anagrams) {
             if (anagram.length() == name.length()) {
-                char[] charArr = name.toCharArray();
-                char[] anagramsChar = anagram.toCharArray();
-                Arrays.sort(charArr);
-                Arrays.sort(anagramsChar);
-                if (Arrays.equals(charArr, anagramsChar)) {
-                    anagramsFromName.add(anagram);
+                if (Arrays.equals(getSortedCharArrayFromString(anagram), getSortedCharArrayFromString(name))) {
+                    listOfAnagramsFromName.add(anagram);
                 }
             }
         }
-            return anagramsFromName;
+        return listOfAnagramsFromName;
+    }
+
+    public static Map<String, List<String>> createAnagramMap(List<String> anagrams, String name) {
+        Map<String, List<String>> anagramMap = new HashMap<>();
+        String key = new String(getSortedCharArrayFromString(name));
+        anagramMap.put(key, getListOfAnagramsByName(anagrams, name));
+        return anagramMap;
     }
 }

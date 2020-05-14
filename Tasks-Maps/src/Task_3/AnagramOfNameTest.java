@@ -12,32 +12,41 @@ public class AnagramOfNameTest {
          Дан словарь, содержащий анаграммы, например {“anna”, “ivan”, “naan”, “vani”, “piotr”, “nana”, “navi”}.
          Написать функцию, которая по слову из словаря вернет все анаграммы этого слова, которые есть в словаре.
          Например, по слову “ivan” функция вернет {“navi”, “vani”}
-   */
+*/
 
     @Test
-    public void AnagramOfName(){
+    public void AnagramOfName() {
         String name = "ivan";
         List<String> anagrams = new ArrayList<>();
         Collections.addAll(anagrams, "anna", "ivan", "naan", "vani", "piotr", "nana", "navi");
 
-        Set<String> exp = new TreeSet<>();
-        Collections.addAll(exp, "ivan","navi","vani");
 
-        Set<String> akt = AnagramOfName.findAnagramsFromName(anagrams,name);
+        List<String> listOfNamesForExpectedMap = new ArrayList<>();
+        Collections.addAll(listOfNamesForExpectedMap, "ivan", "vani", "navi");
 
-        Assert.assertEquals(exp,akt);
+        Map<String, List<String>> exp = new HashMap<>();
+        exp.put("ainv", listOfNamesForExpectedMap);
+
+        Map<String, List<String>> akt = AnagramOfName.createAnagramMap(anagrams, name);
+
+        Assert.assertEquals(exp, akt);
     }
+
     @Test
-    public void AnagramOfName1(){
+    public void AnagramOfName1() {
         String name = "anna";
         List<String> anagrams = new ArrayList<>();
-        Collections.addAll(anagrams, "anna", "ivan", "naan", "vani", "piotr", "nana","anan", "navi");
+        Collections.addAll(anagrams, "anna", "ivan", "naan", "vani", "piotr", "nana", "navi");
 
-        Set<String> exp = new TreeSet<>();
-        Collections.addAll(exp, "anna","naan","anan","nana");
 
-        Set<String> akt = AnagramOfName.findAnagramsFromName(anagrams,name);
+        List<String> listOfNamesForExpectedMap = new ArrayList<>();
+        Collections.addAll(listOfNamesForExpectedMap, "anna", "naan", "nana");
 
-        Assert.assertEquals(exp,akt);
+        Map<String, List<String>> exp = new HashMap<>();
+        exp.put("aann", listOfNamesForExpectedMap);
+
+        Map<String, List<String>> akt = AnagramOfName.createAnagramMap(anagrams, name);
+
+        Assert.assertEquals(exp, akt);
     }
 }

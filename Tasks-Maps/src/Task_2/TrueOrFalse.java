@@ -15,12 +15,12 @@ public class TrueOrFalse {
          wordMultiple(["c", "c", "c", "c"]) → {"c": true}
     */
 
-    public static Map<String, Boolean> trueOrFalse(List<String> list){
+    public static Map<String, Boolean> trueOrFalse(List<String> list) {
         Map<String, Boolean> map = new LinkedHashMap<>();
-        for (int i = 0; i < list.size() ; i++) {
-                map.computeIfPresent(list.get(i),(k,v) -> true);
-                map.putIfAbsent(list.get(i),false);
-            }
+        for (int i = 0; i < list.size(); i++) {
+            map.computeIfPresent(list.get(i), (k, v) -> true);
+            map.putIfAbsent(list.get(i), false);
+        }
         return map;
     }
 }

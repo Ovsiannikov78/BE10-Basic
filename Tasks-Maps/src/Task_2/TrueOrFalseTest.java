@@ -17,45 +17,45 @@ public class TrueOrFalseTest {
 
 
     @Test
-    public void TrueOrFalse1(){
+    public void TrueOrFalse1() {
         List<String> list = new ArrayList<>();
-        Collections.addAll(list,"a", "b","a","c","b");
+        Collections.addAll(list, "a", "b", "a", "c", "b");
 
         Map<String, Boolean> exp = new TreeMap<>();
-        exp.put("a",true);
+        exp.put("a", true);
         exp.put("b", true);
         exp.put("c", false);
 
         Map<String, Boolean> akt = TrueOrFalse.trueOrFalse(list);
 
-        Assert.assertEquals(exp,akt);
+        Assert.assertEquals(exp, akt);
     }
 
     @Test
-    public void TrueOrFalse2(){
+    public void TrueOrFalse2() {
         List<String> list = new ArrayList<>();
-        Collections.addAll(list,"c","b","a");
+        Collections.addAll(list, "c", "b", "a");
 
         Map<String, Boolean> exp = new TreeMap<>();
-        exp.put("a",false);
+        exp.put("a", false);
         exp.put("b", false);
         exp.put("c", false);
 
         Map<String, Boolean> akt = TrueOrFalse.trueOrFalse(list);
 
-        Assert.assertEquals(exp,akt);
+        Assert.assertEquals(exp, akt);
     }
 
     @Test
-    public void TrueOrFalse3(){
+    public void TrueOrFalse3() {
         List<String> list = new ArrayList<>();
-        Collections.addAll(list,"c","c","c","c");
+        Collections.addAll(list, "c", "c", "c", "c");
 
         Map<String, Boolean> exp = new TreeMap<>();
-        exp.put("c",true);
+        exp.put("c", true);
 
         Map<String, Boolean> akt = TrueOrFalse.trueOrFalse(list);
 
-        Assert.assertEquals(exp,akt);
+        Assert.assertEquals(exp, akt);
     }
 }

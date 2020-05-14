@@ -11,7 +11,7 @@ public class NumberOfEntriesByNameTest {
 
    /* 4. Дан список имен, где некоторые имена повторяются.
          Написать функцию, которая по имени вернет количество вхождений этого имени в список.
-    */
+*/
 
     @Test
     public void NumberOfEntriesByName(){
