@@ -1,4 +1,8 @@
 package List_task_7;
+
+import javax.swing.text.html.HTMLDocument;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ListWithoutElements {
@@ -11,15 +15,18 @@ public class ListWithoutElements {
    */
 
     public static List<Integer> removalElements(List<Integer> list, int n) {
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) >= n) {
-                list.remove(list.get(i));
-                i--;
+        List<Integer> newList = new ArrayList<>();
+        for (Integer num : list) {
+            if (num < n) {
+                newList.add(num);
             }
         }
-        return list;
+        return newList;
     }
 }
+
+
+
 
 
 

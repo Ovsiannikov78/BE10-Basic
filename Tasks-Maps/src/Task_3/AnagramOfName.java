@@ -1,6 +1,6 @@
 package Task_3;
 
-import java.lang.reflect.Array;
+
 import java.util.*;
 
 public class AnagramOfName {
@@ -12,7 +12,7 @@ public class AnagramOfName {
          Например, слово “vani” является анаграммой слова “ivan”, а слова “naan” и “anan” являются анаграммами слова “anna”.
          Дан словарь, содержащий анаграммы, например {“anna”, “ivan”, “naan”, “vani”, “piotr”, “nana”, “navi”}.
          Написать функцию, которая по слову из словаря вернет все анаграммы этого слова, которые есть в словаре.
-         Например, по слову “ivan” функция вернет {“navi”, “vani”}
+         Например, по слову “ivan” функция вернет {“ivan”, “navi”, “vani”}
 */
 
     public static char[] getSortedCharArrayFromString(String string) {
@@ -22,7 +22,8 @@ public class AnagramOfName {
     }
 
 
-    public static List<String> getListOfAnagramsByName(List<String> anagrams, String name) {
+    public static Map<String, List<String>> createAnagramMap(List<String> anagrams, String name) {
+        Map<String, List<String>> anagramMap = new HashMap<>();
         List<String> listOfAnagramsFromName = new ArrayList<>();
         for (String anagram : anagrams) {
             if (anagram.length() == name.length()) {
@@ -31,13 +32,7 @@ public class AnagramOfName {
                 }
             }
         }
-        return listOfAnagramsFromName;
-    }
-
-    public static Map<String, List<String>> createAnagramMap(List<String> anagrams, String name) {
-        Map<String, List<String>> anagramMap = new HashMap<>();
-        String key = new String(getSortedCharArrayFromString(name));
-        anagramMap.put(key, getListOfAnagramsByName(anagrams, name));
+        anagramMap.put(new String(getSortedCharArrayFromString(name)), listOfAnagramsFromName);
         return anagramMap;
     }
 }

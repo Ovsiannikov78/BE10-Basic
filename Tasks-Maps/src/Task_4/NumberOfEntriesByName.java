@@ -1,9 +1,6 @@
 package Task_4;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class NumberOfEntriesByName {
     public static void main(String[] args) {
@@ -17,17 +14,17 @@ public class NumberOfEntriesByName {
         return Collections.frequency(namesList, givenName);
     }
     */
-    public static int numberOfEntriesByName(List<String> namesList, String givenName) {
-        int numberOfEntries = 0;
+    public static Map<String, Integer> numberOfEntriesByName(List<String> namesList, String givenName) {
         Map<String, Integer> map = new HashMap<>();
-        for (String name : namesList) {
-            if (name.equals(givenName)) {
-                map.put(givenName, numberOfEntries);
-                numberOfEntries++;
-            } else {
-                map.put(givenName, numberOfEntries);
-            }
-        }
-        return map.get(givenName);
+         if(namesList.contains(givenName)) {
+             for (String name : namesList) {
+                 if (map.containsKey(name)) {
+                     map.put(name, map.get(name) + 1);
+                 } else {
+                     map.put(name, 1);
+                 }
+             }
+         }
+        return map;
     }
 }

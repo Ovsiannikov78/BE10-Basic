@@ -3,13 +3,11 @@ package Task_4;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class NumberOfEntriesByNameTest {
-
-   /* 4. Дан список имен, где некоторые имена повторяются.
+/*
+    4. Дан список имен, где некоторые имена повторяются.
          Написать функцию, которая по имени вернет количество вхождений этого имени в список.
 */
 
@@ -19,9 +17,10 @@ public class NumberOfEntriesByNameTest {
         List<String> namesList = new  ArrayList<>();
         Collections.addAll(namesList,"Ivan", "Maria","Ivan", "Stephan","John","Amalia","Ivan","John");
 
-        int exp = 3;
-        int akt = NumberOfEntriesByName.numberOfEntriesByName(namesList, givenName);
-        Assert.assertEquals(exp,akt);
+        Map<String, Integer> exp = new HashMap<>();
+        exp.put("Ivan", 3);
+        Map<String, Integer> akt = NumberOfEntriesByName.numberOfEntriesByName(namesList, givenName);
+        Assert.assertEquals(exp.get(givenName),akt.get(givenName));
     }
 
     @Test
@@ -30,8 +29,10 @@ public class NumberOfEntriesByNameTest {
         List<String> namesList = new  ArrayList<>();
         Collections.addAll(namesList,"Ivan", "Maria","Ivan", "Stephan","John","Amalia","Ivan","John");
 
-        int exp = 0;
-        int akt = NumberOfEntriesByName.numberOfEntriesByName(namesList, givenName);
+        Map<String, Integer> exp = new HashMap<>();
+        // Здесь пустая map, так как мы ожидаем что на вуходе из метода будет пустая map,
+        //  так как ожидаемого имени в списке нет.
+        Map<String, Integer> akt = NumberOfEntriesByName.numberOfEntriesByName(namesList, givenName);
         Assert.assertEquals(exp,akt);
     }
 }

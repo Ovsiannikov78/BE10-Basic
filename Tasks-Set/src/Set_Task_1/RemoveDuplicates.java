@@ -11,7 +11,7 @@ public class RemoveDuplicates {
    */
 
     public static Set<String> removeDuplicates(List<String> input) {
-        return new LinkedHashSet<>(input);
+        return new HashSet<>(input);
     }
 }
 

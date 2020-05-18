@@ -17,7 +17,7 @@ public class AmountOfKeys {
 
     public static Map<String, String> newMap(Map<String, String> hashMap) {
         if (hashMap.containsKey("a") && hashMap.containsKey("b")) {
-            hashMap.put("ab", "HiThere");
+            hashMap.put("a".concat("b"), hashMap.get("a").concat(hashMap.get("b")));
         }
         return hashMap;
     }

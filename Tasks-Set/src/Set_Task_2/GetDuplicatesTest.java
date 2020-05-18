@@ -1,6 +1,4 @@
 package Set_Task_2;
-
-import Set_Task_1.RemoveDuplicates;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,3 +19,5 @@ public class GetDuplicatesTest {
         Assert.assertEquals(exp,akt);
     }
 }
+
+

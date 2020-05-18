@@ -13,7 +13,7 @@ public class Main {
     }
     public static List<Address> getAddress(List<Person> persons) {
         List<Address> personsAddress = new ArrayList<>();
-        if(!persons.isEmpty()) {
+        if(persons != null) {
             for (Person person : persons) {
                 personsAddress.add(person.getAddress());
             }
