@@ -21,6 +21,9 @@ public class Tasks {
         // 4. Implement solution 7 from above as a method reference
         // Given a string, return a string, which consists of a first half of its character,
         // if length is even, returns an empty string otherwise: "abcd" -> "ab", "abcde" -> "".
+        UnaryOperator<String> getStringByConditions = s -> (s.length()%2 == 0) ? s.substring(0,s.length()/2) : s.replaceAll(s, "");
+        System.out.println(getStringByConditions.apply("abcde"));
+        System.out.println(getStringByConditions.apply("abcdef"));
 
 
     }

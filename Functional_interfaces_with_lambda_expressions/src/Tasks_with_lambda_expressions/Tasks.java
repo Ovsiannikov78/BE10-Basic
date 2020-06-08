@@ -48,8 +48,8 @@ public class Tasks {
         System.out.println(reversedString.apply("abc"));
 
         // 10. Given a number, return a reversed number: 12345 -> 54321
-       // UnaryOperator<Integer> reversedNumber = x -> Integer.parseInt(new StringBuilder(x).reverse().toString());   /* !!! */
-       // System.out.println(reversedNumber.apply(12345));
+        UnaryOperator<Integer> reversedNumber = x -> Integer.valueOf(new StringBuilder(x.toString()).reverse().toString());
+        System.out.println(reversedNumber.apply(12345));
 
         // 11. Given a number, return true if it is even, false otherwise: 6 -> true, 25 -> false
         Predicate<Integer> evenOrOddNumber = x -> x % 2 == 0;
