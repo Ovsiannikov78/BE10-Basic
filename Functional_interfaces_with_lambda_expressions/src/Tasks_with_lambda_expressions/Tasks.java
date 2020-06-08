@@ -33,14 +33,14 @@ public class Tasks {
         System.out.println(getTheCurrentDateWeekEarlier.apply(LocalDate.now()));
 
         // 7. Given a string, return a string, which consists of a first half of its character,
-        // if length is even, returns an empty string otherwise: "abcdef" -> "ab", "abcde" -> "".
+        // if length is even, returns an empty string otherwise: "abcd" -> "ab", "abcde" -> "".
 
         UnaryOperator<String> getStringByConditions = s -> (s.length()%2 == 0) ? s.substring(0,s.length()/2) : s.replaceAll(s, "");
         System.out.println(getStringByConditions.apply("abcde"));
-        System.out.println(getStringByConditions.apply("abcdef"));
+        System.out.println(getStringByConditions.apply("abcd"));
 
         // 8. Return a random number
-        Supplier<Double> randomNumber = () -> Math.random();
+        Supplier<Integer> randomNumber = () -> (int) (Math.random() * 1000);
         System.out.println(randomNumber.get());
 
         // 9. Given a string, return a reversed string: "abc" ->"cba"
