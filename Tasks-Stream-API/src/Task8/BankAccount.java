@@ -3,7 +3,7 @@ package Task8;
 public class BankAccount {
     private String IBAN;
 
-    public BankAccount(String IBAN) {
+    protected BankAccount(String IBAN) {
         this.IBAN = IBAN;
     }
 

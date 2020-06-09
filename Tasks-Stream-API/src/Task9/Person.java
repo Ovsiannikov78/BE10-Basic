@@ -1,10 +1,10 @@
-package Task3;
+package Task9;
 
-public class Persons {
+public class Person {
     private String name;
     private int age;
 
-    protected Persons(String name, int age) {
+    protected Person(String name, int age) {
         this.name = name;
         this.age = age;
     }

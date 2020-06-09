@@ -22,14 +22,15 @@ public class MapOfPersonsTest {
         Persons p1 = new Persons("Ivan", 25);
         Persons p2 = new Persons("Vlad", 18);
         Persons p3 = new Persons("Anna", 32);
-        Persons p4 = new Persons("Eva", 12);
+        Persons p4 = new Persons("Eva", 18);
+        Persons p5 = new Persons("John", 25);
 
-        List<Persons> personsList = Arrays.asList(p1,p2,p3,p4);
+        List<Persons> personsList = Arrays.asList(p1,p2,p3,p4,p5);
 
-        Map<Integer,String> exp = personsList.stream().collect(
-                Collectors.toMap(Persons::getAge, Persons::getName));
+        Map<Integer,List<Persons>> exp = personsList.stream().collect(
+                Collectors.groupingBy(Persons::getAge));
 
-        Map<Integer,String> akt = MapOfPersons.createMapOfPersonsFromTheList(personsList);
+        Map<Integer,List<Persons>> akt = MapOfPersons.createMapOfPersonsFromTheList(personsList);
         Assert.assertEquals(exp,akt);
     }
 }

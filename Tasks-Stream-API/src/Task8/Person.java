@@ -6,7 +6,7 @@ public class Person {
     private String name;
     private List<String> bankAccounts;
 
-    public Person(String name, List<String> bankAccounts) {
+    protected Person(String name, List<String> bankAccounts) {
         this.name = name;
         this.bankAccounts = bankAccounts;
     }

@@ -1,8 +1,6 @@
 package Task6;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class CountingWordsByLetter {
     public static void main(String[] args) {
@@ -13,7 +11,7 @@ public class CountingWordsByLetter {
            а возвращает количество слов, начинающихся на заданную букву.
      */
 
-    public static int countWords(String str, String letter ){
+    public static int countWords(String str, String letter) {
         return (int) Arrays.stream(str.split(" ")).filter(s -> s.startsWith(letter)).count();
     }
 }

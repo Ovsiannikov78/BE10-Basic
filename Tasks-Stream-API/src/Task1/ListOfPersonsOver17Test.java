@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
-import java.util.Collection;
+
 import java.util.List;
 
 public class ListOfPersonsOver17Test {
@@ -22,7 +22,7 @@ public class ListOfPersonsOver17Test {
 
         List<Address> exp = Arrays.asList(p1.getAddress(),p3.getAddress());
 
-        List<Person> akt = ListOfPersonsOver17.listOfAddresses(persons);
+        List<Address> akt = ListOfPersonsOver17.listOfAddresses(persons);
 
         Assert.assertEquals(exp,akt);
     }

@@ -5,14 +5,10 @@ public class Person {
     private int age;
     private Address address;
 
-    public Person(String name, int age, Address address) {
+    protected Person(String name, int age, Address address) {
         this.name = name;
         this.age = age;
         this.address = address;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getAge() {
@@ -28,7 +24,6 @@ public class Person {
         return "Person " +
                 "name = " + name + " ; " +
                 " age = " + age + " ; " +
-                " address = " + address +
-                " .";
+                " address = " + address ;
     }
 }

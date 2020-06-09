@@ -3,11 +3,14 @@ package Task4;
 public class Person {
    private String name;
 
-    public Person(String name) {
+    protected Person(String name) {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public String toString() {
+        return  "Person " +
+                "name - '" + name + '\'' +
+                '}';
     }
 }

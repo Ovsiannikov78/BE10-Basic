@@ -4,15 +4,16 @@ import java.util.Arrays;
 
 public class CheckTheString {
     public static void main(String[] args) {
+        String str = "2356";
+        System.out.println(checkTheString(str));
 
     }
     /*
         7. Написать функцию, которая проверяет, является ли заданная строка целым числом.
            Подсказка - Character.isDigit() и Stream.allMatch().
-     */
+    */
 
-    public static boolean checkTheString(String str){
-      return Arrays.stream(s - >(Character.isDigit(str % 1 == 0)).filter(s -> (s % 1 == 0 )).;
-
+    public static boolean checkTheString(String str) {
+        return str.chars().allMatch(Character::isDigit);
     }
 }
