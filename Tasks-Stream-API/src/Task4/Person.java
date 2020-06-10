@@ -1,7 +1,7 @@
 package Task4;
 
 public class Person {
-   private String name;
+    private String name;
 
     protected Person(String name) {
         this.name = name;
@@ -9,7 +9,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return  "Person " +
+        return "Person " +
                 "name - '" + name + '\'' +
                 '}';
     }

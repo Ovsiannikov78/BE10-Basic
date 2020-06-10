@@ -10,8 +10,8 @@ public class CheckTheStringTest {
     */
 
     @Test
-    public void testCheckTheString(){
-        String str = "2356";
+    public void testCheckTheString() {
+        String str = "235675868";
 
         boolean akt = CheckTheString.checkTheString(str);
 
@@ -19,7 +19,7 @@ public class CheckTheStringTest {
     }
 
     @Test
-    public void testCheckTheString1(){
+    public void testCheckTheString1() {
         String str = "23,76";
 
         boolean akt = CheckTheString.checkTheString(str);
@@ -28,7 +28,7 @@ public class CheckTheStringTest {
     }
 
     @Test
-    public void testCheckTheString3(){
+    public void testCheckTheString3() {
         String str = "0";
 
         boolean akt = CheckTheString.checkTheString(str);

@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class CountingWordsByLetter {
     public static void main(String[] args) {
-
+        String letter = "р";
+        String str = "Ехал Грека через реку, видит Грека в реке рак";
+        System.out.println(countWords(str, letter));
     }
     /*
         6. Написать функцию, которая принимает предложение,

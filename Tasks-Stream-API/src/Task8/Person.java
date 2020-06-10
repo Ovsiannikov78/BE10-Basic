@@ -11,10 +11,6 @@ public class Person {
         this.bankAccounts = bankAccounts;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public List<String> getBankAccounts() {
         return bankAccounts;
     }

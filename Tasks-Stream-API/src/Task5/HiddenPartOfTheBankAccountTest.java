@@ -2,6 +2,7 @@ package Task5;
 
 import org.junit.Assert;
 import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,12 +13,22 @@ public class HiddenPartOfTheBankAccountTest {
     */
 
     @Test
-    public  void  testHiddenPartOfTheBankAccount(){
+    public void testHiddenPartOfTheBankAccount() {
         List<String> listOfIBANs = Arrays.asList("DE7656744657", "456376859123423", "US3434566789");
-        List<String> exp = Arrays.asList("DE7*********", "456************", "US3*********");
 
+        List<String> exp = Arrays.asList("DE7*********", "456************", "US3*********");
         List<String> akt = HiddenPartOfTheBankAccount.encodedBankAccount(listOfIBANs);
 
-        Assert.assertEquals(exp,akt);
+        Assert.assertEquals(exp, akt);
+    }
+
+    @Test
+    public void testHiddenPartOfTheBankAccount1() {
+        List<String> listOfIBANs = Arrays.asList("DE7656744657", "456376859123423", "US3434566789");
+
+        List<String> exp = Arrays.asList("DE7656744657", "456376859123423", "US3434566789");
+        List<String> akt = HiddenPartOfTheBankAccount.encodedBankAccount(listOfIBANs);
+
+        Assert.assertNotEquals(exp, akt);
     }
 }

@@ -12,12 +12,12 @@ public class DuplicateNamesTest {
      */
 
     @Test
-    public void testDuplicateNames(){
+    public void testDuplicateNames() {
         List<String> names = Arrays.asList("Roman", "Jack", "Anna", "Jack", "John", "Vlad", "Roman", "Anna");
-        List<String> exp = Arrays.asList("Roman", "Jack", "Anna", "John", "Vlad");
 
+        List<String> exp = Arrays.asList("Roman", "Jack", "Anna", "John", "Vlad");
         List<String> akt = DuplicateNames.removeDuplicateNames(names);
 
-        Assert.assertEquals(exp,akt);
+        Assert.assertEquals(exp, akt);
     }
 }

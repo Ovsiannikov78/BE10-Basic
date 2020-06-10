@@ -15,7 +15,7 @@ public class MapOfPersons {
         Persons p4 = new Persons("Eva", 18);
         Persons p5 = new Persons("John", 25);
 
-        List<Persons> personsList = Arrays.asList(p1,p2,p3,p4,p5);
+        List<Persons> personsList = Arrays.asList(p1, p2, p3, p4, p5);
 
         System.out.println(createMapOfPersonsFromTheList(personsList));
 
@@ -25,7 +25,7 @@ public class MapOfPersons {
        где ключом является возраст, а значением список людей этого возраста.
      */
 
-    public static Map<Integer,List<Persons>> createMapOfPersonsFromTheList(List<Persons> personsList){
+    public static Map<Integer, List<Persons>> createMapOfPersonsFromTheList(List<Persons> personsList) {
         return personsList.stream().collect(Collectors.groupingBy(Persons::getAge));
     }
 }

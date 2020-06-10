@@ -11,7 +11,7 @@ public class DuplicateNames {
     2. Есть список имен, нужно написать функцию, которая вернет список имен без дупликатов.
      */
 
-    public static List<String> removeDuplicateNames(List<String> names){
+    public static List<String> removeDuplicateNames(List<String> names) {
         return names.stream().distinct().collect(Collectors.toList());
     }
 }

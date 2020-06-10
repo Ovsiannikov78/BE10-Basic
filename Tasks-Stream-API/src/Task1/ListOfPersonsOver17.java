@@ -23,5 +23,4 @@ public class ListOfPersonsOver17 {
     public static List<Address> listOfAddresses(List<Person> persons){
        return persons.stream().filter(p -> p.getAge() > 17).map(Person::getAddress).collect(Collectors.toList());
     }
-
 }

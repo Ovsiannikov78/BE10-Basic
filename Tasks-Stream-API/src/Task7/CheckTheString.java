@@ -1,12 +1,9 @@
 package Task7;
 
-import java.util.Arrays;
-
 public class CheckTheString {
     public static void main(String[] args) {
         String str = "2356";
         System.out.println(checkTheString(str));
-
     }
     /*
         7. Написать функцию, которая проверяет, является ли заданная строка целым числом.
