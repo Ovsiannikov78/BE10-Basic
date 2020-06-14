@@ -40,14 +40,14 @@ public class CreateAndSortThePersonTest {
     public void testGetOldestPerson() {
         String exp = Arrays.toString(new Person[]{p2, p4});
         String akt = CreateAndSortThePerson.getOldestPerson(persons);
-        Assert.assertEquals(exp.toString(), akt);
+        Assert.assertEquals(exp, akt);
     }
 
     @Test
     public void testGetYoungestPerson() {
         String exp = Arrays.toString(new Person[]{p1});
         String akt = CreateAndSortThePerson.getYoungestPerson(persons);
-        Assert.assertEquals(exp.toString(), akt);
+        Assert.assertEquals(exp, akt);
     }
 
     @Test
