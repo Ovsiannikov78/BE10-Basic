@@ -11,8 +11,8 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return "BankAccount{" +
-                "IBAN='" + IBAN + '\'' +
-                '}';
+        return "(" +
+                "IBAN = '" + IBAN + '\'' +
+                ')';
     }
 }

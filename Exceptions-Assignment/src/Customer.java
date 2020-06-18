@@ -40,10 +40,9 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", account=" + account +
-                '}';
+        return "Customer --- " +
+                "Name = '" + name + '\'' +
+                ", Age = " + age +
+                ", Bank account = " + account;
     }
 }
