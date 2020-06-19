@@ -92,19 +92,19 @@ public class VerificationOfUserData {
         }
     }  */
 
-    private static void InappropriateAge(Customer customer) throws InappropriateAgeException {
+    static void InappropriateAge(Customer customer) throws InappropriateAgeException {
         if (customer.getAge() < 17) {
             throw new InappropriateAgeException("Inappropriate age !");
         }
     }
 
-    private static void InappropriateIbanLength(Customer customer) throws InappropriateIbanLengthException {
+    static void InappropriateIbanLength(Customer customer) throws InappropriateIbanLengthException {
         if (customer.getAccount().getIBAN().length() < 16) {
             throw new InappropriateIbanLengthException("Invalid IBAN! Must be 16 characters.");
         }
     }
 
-    private static void IncorrectIbanCountryCode(Customer customer) throws IncorrectIbanCountryCodeException {
+    static void IncorrectIbanCountryCode(Customer customer) throws IncorrectIbanCountryCodeException {
         if (!customer.getAccount().getIBAN().startsWith("DE")) {
             throw new IncorrectIbanCountryCodeException("Incorrect Country Code of the IBAN ! First two letters must be 'DE'.");
         }
