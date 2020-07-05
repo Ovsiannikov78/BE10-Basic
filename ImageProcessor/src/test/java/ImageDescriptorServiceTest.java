@@ -1,3 +1,4 @@
+
 import de.telran.entity.ImageDescriptor;
 import de.telran.service.ConfigService;
 import de.telran.service.CsvFileService;
@@ -59,3 +60,5 @@ public class ImageDescriptorServiceTest {
 
 
 }
+
+

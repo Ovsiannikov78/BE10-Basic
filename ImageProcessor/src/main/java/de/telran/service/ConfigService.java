@@ -8,7 +8,7 @@ public class ConfigService {
 
     Properties prop = new Properties();
 
-    public ConfigService() throws IOException {
+    public ConfigService() {
         try (InputStream input = ConfigService.class.getClassLoader().getResourceAsStream("application.properties")) {
             if(input == null){
                 System.out.println("Sorry, unable to find application.properties");

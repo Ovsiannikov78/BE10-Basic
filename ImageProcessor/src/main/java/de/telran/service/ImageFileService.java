@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 public class ImageFileService {
 
     private ConfigService configService;
+    private CreationImageNameService creationImageNameService = new CreationImageNameService();
 
     public ImageFileService(ConfigService configService){
         this.configService = configService;
@@ -22,9 +23,11 @@ public class ImageFileService {
     public void saveImageAsFile(ActionableImage image) {
         try {
             ImageIO.write(image.getImage(), "jpg",new File(configService.getPathToSavedImages()
-                    + image.hashCode()+ ".jpg"));
+                    + creationImageNameService.getImageName(image))); //image.hashCode()+ ".jpg"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 }
+
+//https://s3-eu-west-1.amazonaws.com/lukaroundimg/beelitz2017/1a.jpg -> s3-eu-west-1.amazonaws.com.lukaroundimg.beelitz2017.1a.jpg

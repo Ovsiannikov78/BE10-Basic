@@ -1,3 +1,4 @@
+
 import de.telran.ImageProcessor;
 import de.telran.entity.ActionableImage;
 import de.telran.entity.ImageDescriptor;
@@ -22,17 +23,20 @@ public class ImageProcessorTest {
     CsvFileService csvFileService = mock(CsvFileService.class);
     ConfigService configService = mock(ConfigService.class);
 
+
     ImageProcessor processor;
 
     @Before
     public void setUp() {
-        processor = new ImageProcessor(imageDescriptorService, downloadService, imageService, imageFileService,csvFileService,configService);
+        processor = new ImageProcessor(imageDescriptorService, downloadService, imageService, imageFileService,
+                                        csvFileService,configService);
     }
 
     @Test
     public void testDoProcessing() {
         //configure mock
         List<ImageDescriptor> testImageDescriptors = createTestImageDescriptors();
+        //List<ActionableImage> downloadedImage = createDownloadedImage();
         when(imageDescriptorService.getImageDescriptors(any())).thenReturn(testImageDescriptors);
         when(downloadService.downloadImages(any())).thenReturn(createDownloadedImage());
 
@@ -41,7 +45,7 @@ public class ImageProcessorTest {
 
         //verify
         verify(imageDescriptorService, times(1)).getImageDescriptors("test.txt");
-        //verify(downloadService, times(1)).downloadImages(testImageDescriptors);
+        //verify(downloadService, times(1)).downloadImages(downloadedImage);
 
         verify(imageFileService, times(2)).saveImageAsFile(any());
 
@@ -59,4 +63,7 @@ public class ImageProcessorTest {
                 new ImageDescriptor("http://server.com/image2.jpg", "THUMBNAIL"));
     }
 }
+
+
+
 
