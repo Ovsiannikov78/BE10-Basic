@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -40,6 +41,8 @@ public class ImageDescriptorServiceTest {
     public void testGetImageDescriptors() {
         //configure mocks
         when(csvFileService.loadStringsFromFile("testfile.txt")).thenReturn(createTestString());
+        when(configService.getPathSeparator()).thenReturn(";");
+        when(configService.getPathToSavedImages()).thenReturn("/Users/sergiiovsiannikov/Desktop/ImageSaveTest/");
 
         //execute testing code
 
@@ -53,12 +56,15 @@ public class ImageDescriptorServiceTest {
         assertEquals("PREVIEW", imageDescriptors.get(0).getActionName());
 
     }
-
     private static List<String> createTestString() {
         return Arrays.asList("abc;PREVIEW", "defiklm;THUMBNAIL");
     }
-
-
 }
+
+
+
+
+
+
 
 
