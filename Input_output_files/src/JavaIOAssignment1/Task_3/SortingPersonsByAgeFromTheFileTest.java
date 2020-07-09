@@ -3,7 +3,6 @@ package JavaIOAssignment1.Task_3;
 
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -36,16 +35,12 @@ public class SortingPersonsByAgeFromTheFileTest {
              new Person("Piotr",20));                               // задокументированный метод в SortingPersonsByAgeFromTheFile
 
      List<Person> akt =SortingPersonsByAgeFromTheFile.createSortedListOfThePersonsFromTheFile(file1);
-
-
  }
-
- */
+*/
     @Test
     public void testSortedListOfThePersonsByAge() {
         List<Person> exp = Arrays.asList(new Person("Ivan",18),
                                          new Person("Piotr",20));
-
 
         List<Person> akt =SortingPersonsByAgeFromTheFile.createSortedListOfThePersonsFromTheFile(file);
 

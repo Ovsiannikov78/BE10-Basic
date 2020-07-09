@@ -1,9 +1,6 @@
 package JavaIOAssignment1.Task_3;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -28,18 +25,19 @@ public class SortingPersonsByAgeFromTheFile {
         System.out.println(createSortedListOfThePersonsFromTheFile(file));
 
     }
+
+
     public static List<Person> createSortedListOfThePersonsFromTheFile(File file)  {
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException e) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
+            return br.lines().map(s -> s.replaceAll("\"", "").split(","))
+                                .map(arr -> new Person(arr[0], Integer.parseInt(arr[1])))
+                                .filter(p -> p.getAge() > 17)
+                                .sorted(Comparator.comparing(Person::getAge))
+                                .collect(Collectors.toCollection(ArrayList::new));
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return br != null ? br.lines().map(s -> s.replaceAll("\"", "").split(","))
-                .map(arr -> new Person(arr[0], Integer.parseInt(arr[1])))
-                .filter(p -> p.getAge() > 17 )
-                .sorted(Comparator.comparing(Person::getAge))
-                .collect(Collectors.toCollection(ArrayList::new)) : null;
+        return null;
     }
 }
 /*
