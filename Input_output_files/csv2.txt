@@ -1,0 +1,3 @@
+Customer {firstName = 'Vasya', lastName = 'Petechkin', age = 15}
+Customer {firstName = 'Petya', lastName = 'Vasechkin', age = 18}
+Customer {firstName = 'Jack', lastName = 'Gibson', age = 25}

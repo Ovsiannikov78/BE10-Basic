@@ -27,26 +27,12 @@ public class SortingPersonsByAgeFromTheFile {
     }
 
 
-    public static List<Person> createSortedListOfThePersonsFromTheFile(File file)  {
-        try (BufferedReader br = new BufferedReader(new FileReader(file))){
+    public static List<Person> createSortedListOfThePersonsFromTheFile(File file) throws FileNotFoundException {
+        BufferedReader br = new BufferedReader(new FileReader(file));
             return br.lines().map(s -> s.replaceAll("\"", "").split(","))
                                 .map(arr -> new Person(arr[0], Integer.parseInt(arr[1])))
                                 .filter(p -> p.getAge() > 17)
                                 .sorted(Comparator.comparing(Person::getAge))
                                 .collect(Collectors.toCollection(ArrayList::new));
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        return null;
     }
-}
-/*
-    public static List<Person> createSortedListOfThePersonsFromTheFile(File file) throws FileNotFoundException {
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        return br.lines().map(s -> s.replaceAll("\"", "").split(","))
-                .map(arr -> new Person(arr[0], Integer.parseInt(arr[1])))   // Другой вариант метода, пробрасывает Exception.
-                .sorted(Comparator.comparing(Person::getAge))              // В дальнейшем может быть использован для написания логики,
-                .collect(Collectors.toCollection(ArrayList::new));         // что бы был шанс повторного использования метода при
-                                                                            // не правильно введённом имени файла и т.д.
-    }
-  */

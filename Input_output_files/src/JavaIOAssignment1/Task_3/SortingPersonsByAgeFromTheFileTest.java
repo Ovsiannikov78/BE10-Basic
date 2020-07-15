@@ -38,7 +38,7 @@ public class SortingPersonsByAgeFromTheFileTest {
  }
 */
     @Test
-    public void testSortedListOfThePersonsByAge() {
+    public void testSortedListOfThePersonsByAge() throws FileNotFoundException {
         List<Person> exp = Arrays.asList(new Person("Ivan",18),
                                          new Person("Piotr",20));
 
@@ -47,7 +47,7 @@ public class SortingPersonsByAgeFromTheFileTest {
         Assert.assertEquals(exp,akt);
     }
     @Test
-    public void testNotSortedListOfThePersonsByAge() {
+    public void testNotSortedListOfThePersonsByAge() throws FileNotFoundException {
         List<Person> exp = Arrays.asList(new Person("Piotr",20),
                                          new Person("Ivan",18),
                                          new Person("Anna",10) );
@@ -58,7 +58,7 @@ public class SortingPersonsByAgeFromTheFileTest {
     }
 
     @Test
-    public void testEmptyListOfPersons() {
+    public void testEmptyListOfPersons() throws FileNotFoundException {
         List<Person> exp = Collections.emptyList();
 
         List<Person> akt =SortingPersonsByAgeFromTheFile.createSortedListOfThePersonsFromTheFile(file);

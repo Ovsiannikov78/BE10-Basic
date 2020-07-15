@@ -46,7 +46,7 @@ public class SaveCustomersListToTheFile {
     public static void writeCustomersToTheCsvFile_2(List<Customer> customerList, File csvFile1) {
         try (BufferedWriter bw1 = new BufferedWriter(new FileWriter(csvFile1))) {
             for (Customer customer : customerList) {
-                bw1.write(customer.getFirstName() + "," + customer.getLastName() + "," + customer.getAge() + "\n");
+                bw1.write(Customer.customerForTheCsvFile(customer));
             }
         } catch (IOException e) {
             e.printStackTrace();

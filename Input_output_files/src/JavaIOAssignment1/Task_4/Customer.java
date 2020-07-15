@@ -48,4 +48,7 @@ public class Customer {
                 ", age = " + age +
                 '}';
     }
+    protected static String customerForTheCsvFile(Customer customer){
+        return customer.getFirstName() + "," + customer.getLastName() + "," + customer.getAge() + System.lineSeparator();
+    }
 }
