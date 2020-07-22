@@ -1,16 +1,25 @@
 package JavaIOAssignment2.Task_2;
 
-import java.util.Objects;
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Person {
     private String firstName;
     private String lastName;
     private Equipment equipment;
 
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Person(String firstName, String lastName, Equipment equipment) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.equipment = equipment;
+
+
     }
     public String getFirstName() {
         return firstName;
@@ -47,8 +56,11 @@ public class Person {
                 ", lastName = '" + lastName + '\'' + equipment +
                 '}'+ "\n";
     }
-    protected static String personForSortingByEquipmentPrice(JavaIOAssignment2.Task_2.Person person) {
-        return person.getFirstName() + " " + person.getLastName() + "," + person.getEquipment().getPrice() + System.lineSeparator();
+    protected static String personForSortingByEquipmentPrice(Map.Entry<String,Integer> entry ) {
+        return entry.getKey() + "," + entry.getValue() + System.lineSeparator();
+    }
+    protected static String getKey (Person p){
+        return (p.getFirstName() + " " + p.getLastName());
     }
 }
 

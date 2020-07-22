@@ -2,6 +2,10 @@ package JavaIOAssignment2.Task_2;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
+
+import static JavaIOAssignment2.Task_2.Person.personForSortingByEquipmentPrice;
+
 
 public class SortedListByProductPrice {
     /*
@@ -24,16 +28,18 @@ public class SortedListByProductPrice {
         readAndSortPersonsFile(file);
 
     }
+
     public static File readAndSortPersonsFile(File file) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         BufferedWriter bw = new BufferedWriter(new FileWriter("sortedPersonsByEquipmentPrice.txt"));
-        br.lines()
+        (br.lines()
                 .map(s -> s.replaceAll("\"", "").split(","))
                 .map(arr -> (new Person(arr[0], arr[1], (new Equipment(arr[2], Integer.parseInt(arr[3]))))))
-                .sorted(Comparator.comparingInt(p -> p.getEquipment().getPrice()))
-                .forEach(person -> {
+                .collect(Collectors.groupingBy(Person::getKey, Collectors.summingInt(p -> p.getEquipment().getPrice())))
+                .entrySet().stream().sorted(Comparator.comparingInt(Map.Entry::getValue)))
+                .forEach((entry) -> {
                     try {
-                        bw.write(Person.personForSortingByEquipmentPrice(person));
+                        bw.write(personForSortingByEquipmentPrice(entry));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }

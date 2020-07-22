@@ -23,10 +23,31 @@ public class SortFileByDateOfBirth {
         sortFileByDateOfBirth(file);
 
     }
+/*
+    public static File sortFileByDateOfBirth(File file) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("sortedPersonsByDateOfBirth.txt"));
+        br.lines()
+                .map(s -> s.replaceAll("\"", "").split(","))
+                .map(arr -> (new Person(arr[0], LocalDate.parse(arr[1], DateTimeFormatter.ofPattern("dd-MM-yyyy")))))
+                .sorted(Comparator.comparing(Person::getDateOfBirth))
+                .forEach(person -> {
+                    try {
+                        bw.write(Person.personForTheFile(person));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+        bw.close();
+        return file;
+    }
+
+ */
 
     public static File sortFileByDateOfBirth(File file) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
         BufferedWriter bw = new BufferedWriter(new FileWriter("sortedPersonsByDateOfBirth.txt"));
+        BufferedWriter bw1 = new BufferedWriter(new FileWriter("anotherDateFormat.txt"));
         br.lines()
                 .map(s -> s.replaceAll("\"", "").split(","))
                 .map(arr -> (new Person(arr[0], LocalDate.parse(arr[1], DateTimeFormatter.ofPattern("dd-MM-yyyy")))))
