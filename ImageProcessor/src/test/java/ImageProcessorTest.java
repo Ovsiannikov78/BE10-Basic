@@ -45,7 +45,7 @@ public class ImageProcessorTest {
 
         //verify
         verify(imageDescriptorService, times(1)).getImageDescriptors("test.txt");
-        //verify(downloadService, times(1)).downloadImages(downloadedImage);
+        verify(downloadService, times(1)).downloadImages(any());
 
         verify(imageFileService, times(2)).saveImageAsFile(any());
 
