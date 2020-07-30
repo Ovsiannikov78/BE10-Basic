@@ -1,0 +1,3 @@
+Vasya,Petechkin,15
+Petya,Vasechkin,18
+Jack,Gibson,25
