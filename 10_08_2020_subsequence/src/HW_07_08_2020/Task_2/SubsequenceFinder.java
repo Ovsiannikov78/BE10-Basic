@@ -7,13 +7,16 @@ public class SubsequenceFinder {
     при этом a идет "левее" b то и во второй они должны тоже быть и при этом a левее b).
     Например: {bcd} это подпоследовательность {A$%bGDFcLKKd}. Написать ф-ю, которая будет отвечать на вопрос, является ли одна последовательность подпоследовательностью другой. Ф-я принимает два String, возвращает boolean
      */
+    public static void main(String[] args) {
+        System.out.println(isSubsequence("abcs"," sdfavdfvb;lkcooso"));
+    }
 
-    public boolean isSubsequence(String pattern, String text) {
+    public static boolean isSubsequence(String pattern, String text) {
         return isSubsequenceRec(pattern, text, pattern.length(), text.length());
 
     }
 
-    private boolean isSubsequenceRec(String pattern, String text, int patternLength, int textLength) {
+    private static boolean isSubsequenceRec(String pattern, String text, int patternLength, int textLength) {
         // if. the current length of the text is smaller than the current length of the pattern.
         // therefore the pattern cannot be a subsequence of the text
         if (patternLength > textLength)

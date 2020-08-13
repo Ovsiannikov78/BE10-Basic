@@ -16,42 +16,42 @@ class CasinoGameTest {
 
     @Test
     public void testCasinoGame_1() {
-        int exp = 5;
+        int exp = 4;
         int akt = CasinoGame.findTheMinimumQuantityOfGames(12, 2);
         assertEquals(exp, akt);
     }
 
     @Test
     public void testCasinoGame_2() {
-        int exp = 7;
+        int exp = 6;
         int akt = CasinoGame.findTheMinimumQuantityOfGames(12, 1);
         assertEquals(exp, akt);
     }
 
     @Test
     public void testCasinoGame_3() {
-        int exp = 6;
+        int exp = 5;
         int akt = CasinoGame.findTheMinimumQuantityOfGames(32, 4);
         assertEquals(exp, akt);
     }
 
     @Test
     public void testCasinoGame_4() {
-        int exp = 6;
+        int exp = 5;
         int akt = CasinoGame.findTheMinimumQuantityOfGames(32, 5);
         assertEquals(exp, akt);
     }
 
     @Test
     public void testCasinoGame_5() {
-        int exp = 6;
+        int exp = 5;
         int akt = CasinoGame.findTheMinimumQuantityOfGames(6, 0);
         assertEquals(exp, akt);
     }
 
     @Test
     public void testCasinoGame_6() {
-        int exp = 4;
+        int exp = 3;
         int akt = CasinoGame.findTheMinimumQuantityOfGames(8, 8);
         assertEquals(exp, akt);
     }
@@ -59,7 +59,7 @@ class CasinoGameTest {
     @Test
     public void testCasinoGame_7() {
         int exp = 0;
-        int akt = CasinoGame.findTheMinimumQuantityOfGames(0, 2);
+        int akt = CasinoGame.findTheMinimumQuantityOfGames(1, 2);
         assertEquals(exp, akt);
     }
 }
