@@ -10,20 +10,21 @@ public class MinimumQuantityOfCoins {
 
     }
 
-    public int findTheMinimumQuantityOfCoinsForAGivenAmount(int amount, int a, int b, int c) {
+    public int findTheMinimumQuantityOfCoinsForAGivenAmount(int amount) {
         int quantityOfCoins = 0;
         while (amount != 0) {
-            if (amount >= a) {
-                amount = amount - a;
+            if (amount >= 10) {
+                amount = amount - 10;
                 quantityOfCoins++;
-            } else if (amount >= b) {
-                amount = amount - b;
+            } else if (amount >= 5) {
+                amount = amount - 5;
                 quantityOfCoins++;
             } else {
-                amount = amount - c;
+                amount = amount - 1;
                 quantityOfCoins++;
             }
         }
         return quantityOfCoins;
     }
+
 }
