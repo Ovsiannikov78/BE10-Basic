@@ -1,19 +1,27 @@
+package Solution_1;
+
+import Solution_2.CoversFinder;
+import Solution_2.Segment;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-class FindNumberOfTheSegmentsCoveringPointsTest {
-        Segment s1 = new Segment(1,4);
-        Segment s2 = new Segment(3,8);
-        Segment s3 = new Segment(2,5);
-        Segment s4 = new Segment(6,12);
-        Segment s5 = new Segment(10,14);
-        Segment s6 = new Segment(15,17);
-        List<Segment> segments = Arrays.asList(s1,s2,s3,s4,s5,s6);
+import static org.junit.jupiter.api.Assertions.*;
 
-        List<Integer> points = Arrays.asList(3,7,12,16);
+class FindNumberOfTheSegmentsCoveringPointsTest {
+
+
+    Segment s1 = new Segment(1,4);
+    Segment s2 = new Segment(3,8);
+    Segment s3 = new Segment(2,5);
+    Segment s4 = new Segment(6,12);
+    Segment s5 = new Segment(10,14);
+    Segment s6 = new Segment(15,17);
+    List<Segment> segments = Arrays.asList(s1,s2,s3,s4,s5,s6);
+
+    List<Integer> points = Arrays.asList(3,7,12,16);
 
     @Test
     public void testFindNumberOfTheSegmentsCoveringPoints_1(){
@@ -31,4 +39,3 @@ class FindNumberOfTheSegmentsCoveringPointsTest {
     }
 
 }
-

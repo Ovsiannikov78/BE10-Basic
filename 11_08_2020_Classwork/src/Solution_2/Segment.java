@@ -1,3 +1,5 @@
+package Solution_2;
+
 public class Segment {
    private int left;
    private int right;

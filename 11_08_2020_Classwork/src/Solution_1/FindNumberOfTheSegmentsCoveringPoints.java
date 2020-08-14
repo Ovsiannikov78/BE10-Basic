@@ -1,3 +1,7 @@
+package Solution_1;
+
+import Solution_2.Segment;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,21 +18,22 @@ public class FindNumberOfTheSegmentsCoveringPoints {
 
         List<Integer> points = Arrays.asList(3,7,12,16);
 
-        System.out.println(getNumberCovers(points,segments));
+        System.out.println(getNumberCovers(points, segments));
 
     }
 
-    public static List<Integer> getNumberCovers(List<Integer> points, List<Segment> segments){
+    public static List<Integer> getNumberCovers(List<Integer> points, List<Segment> segments) {
         List<Integer> res = new ArrayList<>();
-        for (Integer p: points) {
+        for (Integer p : points) {
             int covers = 0;
             for (Segment seg : segments) {
-                if(seg.getLeft() <= p && seg.getRight() >= p){
+                if (seg.getLeft() <= p && seg.getRight() >= p) {
                     covers++;
                 }
             }
-                    res.add(covers);
+            res.add(covers);
         }
         return res;
     }
 }
+
