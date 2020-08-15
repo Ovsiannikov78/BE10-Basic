@@ -1,3 +1,6 @@
+package Solution_2;
+
+import Solution_1.MinimumQuantityOfCoins;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +13,7 @@ class MinimumQuantityOfCoinsTest {
        7= 5+1+1 -> 3
        27=10+10+5+1+1 -> 5
     */
-    MinimumQuantityOfCoins minimumQuantityOfCoins = new MinimumQuantityOfCoins();
+    Solution_1.MinimumQuantityOfCoins minimumQuantityOfCoins = new MinimumQuantityOfCoins();
 
     @Test
     public void findTheMinimumQuantityOfCoins_Amount_7() {

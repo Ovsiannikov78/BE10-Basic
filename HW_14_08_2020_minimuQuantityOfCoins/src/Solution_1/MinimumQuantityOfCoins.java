@@ -1,3 +1,5 @@
+package Solution_1;
+
 public class MinimumQuantityOfCoins {
     /*
        Есть сумма денег.
