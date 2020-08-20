@@ -1,3 +1,5 @@
+package MySolution;
+
 public class Score {
    private String name;
    private long raceTime;
@@ -13,7 +15,7 @@ public class Score {
 
     @Override
     public String toString() {
-        return "Score {" +
+        return "Version_1.Score {" +
                 "name = '" + name + '\'' +
                 ", raceTime = " + raceTime +
                 '}' + "\n";

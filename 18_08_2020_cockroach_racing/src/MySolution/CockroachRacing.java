@@ -1,3 +1,5 @@
+package MySolution;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -8,12 +10,12 @@ public class CockroachRacing {
     Каждый таракан делает N шагов(одинаковое).
     Каждый шаг занимает от 50 до 100 мс (рандомно).
     Надо составить таблицу первенства тараканов и распечатеть её ( место, имя и время забега ).
-    Class Cockroach implement Runnable{
+    Class Version_1.Cockroach implement Runnable{
     void run(){
     for(количество шагов){
        }
     }
-    Общий List куда записываются результаты (Score) → в конструктор к таракану
+    Общий List куда записываются результаты (Version_1.Score) → в конструктор к таракану
      */
 
     public static void main(String[] args) throws InterruptedException {

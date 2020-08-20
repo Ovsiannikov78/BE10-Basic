@@ -1,3 +1,4 @@
+package MySolution;
 
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class Cockroach implements Runnable {
 
     @Override
     public String toString() {
-        return "Cockroach{" +
+        return "Version_1.Cockroach{" +
                 "name='" + name + '\'' +
                 ", quantityOfSteps=" + quantityOfSteps +
                 ", table=" + table +
