@@ -20,7 +20,7 @@ public class Main {
         Thread th1 = new Thread(be1);
         BankEmployee be2 = new BankEmployee("Petya",20,100,300,100,300,30, resultList);
         Thread th2 = new Thread(be2);
-        BankEmployee be3 = new BankEmployee("Vasya",20,200,300,100,150,30, resultList);
+        BankEmployee be3 = new BankEmployee("Vasya",20,200,300,50,100,30, resultList);
         Thread th3 = new Thread(be3);
 
 
