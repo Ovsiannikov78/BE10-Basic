@@ -1,0 +1,22 @@
+{
+  "firstName" : "Ivan",
+  "lastName" : "Petrov",
+  "age" : 35,
+  "address" : [
+    {
+      "street" : "Parkstraße",
+      "houseNumber" : 12,
+      "city" : "Berlin",
+      "postCode" : 13086,
+      "country" : "Germany"
+    },
+    {
+      "street" : "Kurstraße",
+      "houseNumber" : 47,
+      "city" : "Berlin",
+      "postCode" : 10117,
+      "country" : "Germany"
+    }
+  ]
+
+}

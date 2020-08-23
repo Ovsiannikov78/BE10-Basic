@@ -1,0 +1,20 @@
+{
+  "firstName":"Vladimir",
+  "lastName":"Marin",
+  "age":25,
+  "address":[
+    {
+      "street":"Potsdamerstr",
+      "houseNumber":96,
+      "postCode":10827,
+      "country":"Germany",
+      "city":"Berlin"
+    },
+    {
+      "street":"Hauptstr",
+      "houseNumber":32,
+      "postCode":10317,
+      "country":"Germany",
+      "city":"Berlin"
+    }]
+}
