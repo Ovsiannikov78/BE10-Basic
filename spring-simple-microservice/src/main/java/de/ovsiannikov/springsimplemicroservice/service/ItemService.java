@@ -24,4 +24,8 @@ public class ItemService {
     public List<Item> getItems() {
         return itemRepository.findAll();
     }
+
+    public Item getItemById(Long id) {
+        return itemRepository.getOne(id);
+    }
 }
